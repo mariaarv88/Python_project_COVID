@@ -33,8 +33,9 @@ from plotly.subplots import make_subplots
 
 
 st.set_page_config(layout="wide")
-st.header('Greece Covid Analytics Dashboard')
-st.subheader('Statistical information')
+st.title('Greece covid analytics Dashboard')
+
+
 
 
 # Index(['new_cases', 'confirmed', 'new_deaths', 'total_deaths', 'new_tests',
@@ -51,10 +52,9 @@ value_labels={"New Cases":'new_cases',"Rt":"Rt","New Tests":'new_tests',"New Pos
              "New Vaccinations":"new_vaccinations","Total Vaccinations":"total_vaccinations"}
 
 
-Rows={"Cases and Testing":["New Cases","New Tests","New Positive Tests"],
+Rows={"Cases and Testing":["New Cases","Rt","New Tests","New Positive Tests"],
      "Hospitalization and Mortallity":["New Hospitalizations","New Critical","New Deaths","ICU out"],
-      "Vaccinations":["Total Vaccinations",'','',''],
-      "Statistical indices": ["Basic Reproduction Number, R0", "Effective Reproduction Number, Rt"]
+      "Vaccinations":["Total Vaccinations",'','','']
      }
 
 
@@ -65,7 +65,7 @@ for Row in Rows: #Row is every key in dictionary Rows
     with cols[0]:
         st.markdown(Row)
         
-    #zip 
+    #zip
     #for i,j,k in zip(['a','b','c'],[1,2,3],[7,8,9]):
     #i='a',j=1,k=7
     #'b',2,8
@@ -98,7 +98,6 @@ for Row in Rows: #Row is every key in dictionary Rows
                 ci.metric(label=label,value= round(val,2), delta = str(round(dif,2)), delta_color = 'inverse')
 
 
-
 row_spacer_start, row1, row2, row_spacer_end  = st.columns((0.1, 1.0, 6.4, 0.1))
 
 with row1:
@@ -106,7 +105,7 @@ with row1:
     plot_value = st.selectbox ("Variable", list(value_labels.keys()), key = 'value_key') #take all the keys from value_labels dictionary
     plot_value2 = st.selectbox ("Second Variable", [None]+list(value_labels.keys()), key = 'value_key')
     smooth = st.checkbox("Add smooth curve")
-
+   
     log = st.checkbox("Use log scale")
     
 with row2:    
