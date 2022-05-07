@@ -33,7 +33,8 @@ from plotly.subplots import make_subplots
 
 
 st.set_page_config(layout="wide")
-st.title('Greece covid analytics Dashboard')
+st.header('Greece Covid Analytics Dashboard')
+st.subheader('Statistical information')
 
 
 # Index(['new_cases', 'confirmed', 'new_deaths', 'total_deaths', 'new_tests',
