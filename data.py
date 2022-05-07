@@ -51,9 +51,10 @@ value_labels={"New Cases":'new_cases',"Rt":"Rt","New Tests":'new_tests',"New Pos
              "New Vaccinations":"new_vaccinations","Total Vaccinations":"total_vaccinations"}
 
 
-Rows={"Cases and Testing":["New Cases","Rt","New Tests","New Positive Tests"],
+Rows={"Cases and Testing":["New Cases","New Tests","New Positive Tests"],
      "Hospitalization and Mortallity":["New Hospitalizations","New Critical","New Deaths","ICU out"],
-      "Vaccinations":["Total Vaccinations",'','','']
+      "Vaccinations":["Total Vaccinations",'','',''],
+      "Statistical indices": ["Basic Reproduction Number, R0", "Effective Reproduction Number, Rt"]
      }
 
 
