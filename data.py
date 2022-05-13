@@ -98,7 +98,7 @@ for Row in Rows: #Row is every key in dictionary Rows
                 ci.metric(label=label,value= round(val,2), delta = str(round(dif,2)), delta_color = 'inverse')
 
 
-row_spacer_start, row1, row2, row_spacer_end  = st.columns((0.1, 1.0, 6.4, 0.1))
+#row_spacer_start, row1, row2, row_spacer_end  = st.columns((0.1, 1.0, 6.4, 0.1))
 
 with row1:
     #add here everything you want in first column
